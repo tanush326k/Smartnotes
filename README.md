@@ -36,7 +36,6 @@
 - [🚀 Performance Optimizations](#-performance-optimizations)
 - [♿ Accessibility](#-accessibility)
 - [⚙️ Installation & Development](#-installation--development)
-- [🚢 Deploying to Vercel](#-deploying-to-vercel)
 - [🗺️ Future Roadmap](#-future-roadmap)
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
