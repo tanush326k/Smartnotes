@@ -23,7 +23,6 @@
 ## 📋 Table of Contents
 - [🔍 Overview](#-overview)
 - [⚡ Features](#-features)
-- [📸 Screenshots](#-screenshots)
 - [🏗️ System Architecture & Diagrams](#-system-architecture--diagrams)
   - [Architecture Diagram](#architecture-diagram)
   - [Application Workflow](#application-workflow)
@@ -81,15 +80,6 @@ Designed with inspiration from premium tools like **Linear**, **Vercel**, and **
 ### Desktop Layout (Dark Mode)
 ```
 [docs/images/output.png]
-```
-> *Figure 2: Dark mode featuring White/Zinc glassmorphism borders and high-contrast typography.*
-
-### Mobile Responsive Layout
-```
-[docs/images/mobile.png]
-```
-> *Figure 3: Fully responsive single-column layout optimized for tablets and mobile viewports.*
-
 ---
 
 ## 🏗️ System Architecture & Diagrams
