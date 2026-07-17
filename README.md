@@ -98,18 +98,14 @@ graph TD
     UI[React User Interface] --> Hooks[State & Theme Hooks]
     UI --> Utils[AI Processing & Clipboard Utils]
     Utils --> SimulatedAI[Linguistic Rules Engine]
-    style UI fill:#4F46E5,stroke:#fff,stroke-width:2px,color:#fff
-    style Hooks fill:#7C3AED,stroke:#fff,stroke-width:2px,color:#fff
-    style Utils fill:#06B6D4,stroke:#fff,stroke-width:2px,color:#fff
-    style SimulatedAI fill:#18181B,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
 ### Application Workflow
 Illustrates the user interactions and operational sequence.
 
 ```mermaid
-flowchart TD
-    A[User Enters Text] --> B[Clicks Command Button / Presses Ctrl+Enter]
+graph TD
+    A[User Enters Text] --> B[Clicks Command Button or Presses Ctrl+Enter]
     B --> C[Card Enters Loading Shimmer State]
     C --> D[AI Processing Engine Resolves Output]
     D --> E[Framer Motion Animates Output Card Entrance]
@@ -122,27 +118,27 @@ The UI Component tree structure inside the single-page application.
 
 ```mermaid
 graph TD
-    App[App.tsx] --> Navbar[Navbar.tsx]
-    App --> Hero[Hero.tsx]
-    App --> NoteEditor[NoteEditor.tsx]
-    App --> OutputCard[OutputCard.tsx Summary]
-    App --> OutputCard2[OutputCard.tsx Key Points]
-    App --> OutputCard3[OutputCard.tsx Improved]
-    App --> ToastContainer[ToastContainer.tsx]
+    App["App.tsx"] --> Navbar["Navbar.tsx"]
+    App --> Hero["Hero.tsx"]
+    App --> NoteEditor["NoteEditor.tsx"]
+    App --> OutputCard1["OutputCard.tsx (Summary)"]
+    App --> OutputCard2["OutputCard.tsx (Key Points)"]
+    App --> OutputCard3["OutputCard.tsx (Improved Version)"]
+    App --> ToastContainer["ToastContainer.tsx"]
 ```
 
 ### State Diagram
 Defines the lifecycle state machine of the editor.
 
 ```mermaid
-stateDiagram-v2
-    [*] --> Idle
-    Idle --> Typing : User enters characters
-    Typing --> Processing : Trigger Summarize / Improve
-    Processing --> Completed : Processing Finished
-    Completed --> Copied : Clicks Copy
-    Copied --> Typing : Modifies text
-    Typing --> Idle : Clear Button Triggered
+graph TD
+    IdleState[Idle] -->|User enters characters| TypingState[Typing]
+    TypingState -->|Trigger Summarize / Improve| ProcessingState[Processing]
+    ProcessingState -->|Processing Finished| CompletedState[Completed]
+    CompletedState -->|Clicks Copy| CopiedState[Copied]
+    CopiedState -->|Modifies text| TypingState
+    CompletedState -->|Modifies text| TypingState
+    CompletedState -->|Clicks Clear| IdleState
 ```
 
 ### Sequence Diagram
@@ -162,7 +158,6 @@ sequenceDiagram
     Editor->>App: Trigger Action (summarize)
     App->>Card: Set Loading (true)
     App->>AI: Request linguistic resolve
-    Note over AI: Performs summary rules
     AI-->>App: Return summarized text
     App->>Card: Set Loading (false) & update content
     App->>Toast: Dispatch success notification
@@ -173,35 +168,22 @@ sequenceDiagram
 User goals and actions step by step.
 
 ```mermaid
-journey
-    title Refining Raw Ideas into Professional Summaries
-    section Input Note
-      Open application: 5: User
-      Type or paste messy notes: 5: User
-    section Action Trigger
-      Press Ctrl+Enter / click Summarize: 5: User
-      Observe loading skeleton shimmer: 4: User
-    section Result Evaluation
-      Read clean summary: 5: User
-      Compare with improved grammar: 4: User
-    section Export
-      Click copy button: 5: User
-      See visual confirmation check: 5: User
+graph LR
+    step1[1. Open App] --> step2[2. Write Note]
+    step2 --> step3[3. Click Summarize]
+    step3 --> step4[4. See Loading Skeleton]
+    step4 --> step5[5. View Clean Summary]
+    step5 --> step6[6. Copy to Clipboard]
 ```
 
 ### Data Flow Diagram
 Tracks textual data mutation throughout the app.
 
 ```mermaid
-dfd2
-    node UserNotes [Raw Input Notes]
-    node Processor [AI Processing Utility]
-    node ResultsState [App Results State]
-    node CardOutput [Card Displays]
-    
-    UserNotes -->|Raw String| Processor
-    Processor -->|Linguistic Rules Transformation| ResultsState
-    ResultsState -->|Partial State Objects| CardOutput
+graph LR
+    UserNotes["Raw Input Notes"] -->|Raw String| Processor["AI Processing Utility"]
+    Processor -->|Linguistic Rules Transformation| ResultsState["App Results State"]
+    ResultsState -->|Partial State Objects| CardOutput["Card Displays"]
 ```
 
 ---
