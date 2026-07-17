@@ -261,18 +261,6 @@ npm run dev
 npm run build
 ```
 
----
-
-## 🚢 Deploying to Vercel
-
-The application is fully client-side and includes zero backend API dependencies, making it directly compatible with Vercel deployment.
-
-1. **GitHub Import**: Push this repository to your GitHub account.
-2. **Import into Vercel Dashboard**: Select the repository.
-3. **Deploy**: Vercel will automatically detect the Vite config and compile using `npm run build` output.
-
----
-
 ## 🗺️ Future Roadmap
 - [ ] **PDF & Text Upload**: Direct file drag-and-drop support.
 - [ ] **Export Options**: Export summary results as Markdown, HTML, or JSON formats.
