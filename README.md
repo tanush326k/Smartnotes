@@ -68,18 +68,6 @@ Designed with inspiration from premium tools like **Linear**, **Vercel**, and **
 
 ---
 
-## 📸 Screenshots
-
-### Desktop Layout (Light Mode)
-```
-[docs/images/home.png]
-```
-> *Figure 1: Clean, spacious minimal layout showcasing note input with floating actions and helper badges.*
-
-### Desktop Layout (Dark Mode)
-```
-[docs/images/output.png]
----
 
 ## 🏗️ System Architecture & Diagrams
 
